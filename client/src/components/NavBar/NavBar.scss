@@ -1,0 +1,58 @@
+.navbar-container {
+	width: 85%;
+	background-color: white;
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-left: 20px;
+	padding-right: 120px;
+
+	box-shadow: var(--box-shadow-primary);
+        position: sticky;
+        top: 10px;
+
+
+	.logo {
+		cursor: pointer;
+	}
+	.nav-list {
+		display: flex;
+		align-items: center;
+		gap: 20px;
+		font-size: 16px;
+		font-weight: 600;
+		color: var(--text-color-primary);
+
+		li {
+			&:hover {
+				cursor: pointer;
+			}
+			&::selection,
+			&:focus,
+			&:active {
+				color: var(--highlight-secondary);
+				color: #0051A0;
+			}
+
+			button {
+				width: 113px;
+				height: 56px;
+				border-radius: 10px;
+				border: 2px white;
+				font-size: 16px;
+				font-weight: bold;
+				color: white;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				gap: 5px;
+				background: linear-gradient(90deg, #198dff, #055cb2, #0256a8, #0155a6, #0051a0);
+
+				&:focus{
+					scale: .95;
+				}
+			}
+		}
+	}
+}

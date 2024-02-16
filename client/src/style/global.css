@@ -1,0 +1,57 @@
+@import url("./variable.css");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+  /* color: var(--text-color-primary); */
+}
+#root {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* background-color: transparent; */
+}
+/* --------------scrollbar styling----------------- */
+::-webkit-scrollbar {
+  width:5px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: rgba(150, 117, 250, 0.3);
+  border-radius: 10px;
+} 
+/* ::-webkit-scrollbar-track {
+  background-color: rgb(211, 182, 146);
+} */
+
+/* --------------Button----------------- */
+button {
+  cursor: pointer;
+  outline: none;
+}
+button:focus,
+button:hover {
+  filter: brightness(93%);
+}
+
+
+/* --------------List----------------- */
+ul{
+list-style-type: none;
+}
+
+/* ---------font size------------- */
+.b1 {
+  font-size: 17px;
+}
+.b2 {
+  font-size: 15px;
+}
+.b3 {
+  font-size: 13px;
+}
+.b4 {
+  font-size: 11px;
+}

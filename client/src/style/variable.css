@@ -1,0 +1,32 @@
+:root {
+	--mob-height: 772px;
+
+	--headline-h1: 34px;
+	--headline-h2: 28px;
+	--headline-h3: 22px;
+	--headline-h4: 20px;
+
+	--body-b1: 17px;
+	--body-b2: 15px;
+	--body-b3: 13px;
+	--body-b4: 11px;
+
+	--break-point1: 500px;
+}
+
+:root {
+	--bg-primary: white;
+		
+	--highlight-primary: #FCB317;
+	--highlight-secondary: #0051A0 ;
+	
+	--text-color-primary: #181933;
+	/* --text-color-secondary: #8f959e; */
+	
+	--color-black-white: black;
+
+	--shadow-color: rgba(0, 0, 0, 0.3);
+	--box-shadow-primary:0 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+	/* --svg-color: invert(0%); */
+}
