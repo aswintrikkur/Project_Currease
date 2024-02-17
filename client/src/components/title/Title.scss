@@ -1,0 +1,14 @@
+.title-container {
+	h2 {
+		font-family: "Mochiy Pop One", sans-serif;
+		font-size: 43px;
+		line-height: 54px;
+		color: var(--text-color-primary);
+		// margin-bottom: 40px;
+
+		span {
+			font: inherit;
+			color: var(--highlight-secondary);
+		}
+	}
+}

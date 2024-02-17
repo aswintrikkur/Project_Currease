@@ -1,0 +1,23 @@
+.primary-button{
+
+    button{
+        padding: 15px 35px ;
+        background: linear-gradient(90deg, #198dff, #055cb2, #0256a8, #0155a6, #0051a0);
+        color: white;
+        font-family:'Open Sans', sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        border-radius: 10px;
+        border: none;
+
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+
+        span{
+            margin-left:  15px;
+        }
+    }
+}

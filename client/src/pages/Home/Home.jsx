@@ -2,14 +2,13 @@ import React from "react";
 import "./Home.scss";
 import { NavBar } from "../../components/NavBar/NavBar";
 import { Products } from "../Products/Products";
+import { MainContainer } from "../../components/container/Container";
+import { Footer } from "../../components/footer/Footer";
 
 export const Home = () => {
 	return (
 		<div className="homepage-container">
-			<div className="header">
-				<NavBar />
-			</div>
-
+			<NavBar />
 			<section>
 				<div className="title1">
 					<h3>UNIQUE CURRY POWDERS</h3>
@@ -23,6 +22,7 @@ export const Home = () => {
 						Taste Buds With U
 					</h1>
 				</div>
+
 				<div className="banner">
 					<div className="gradient-outer">
 						<div className="gradient"></div>

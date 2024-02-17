@@ -1,20 +1,46 @@
 .products-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 750px;
-    z-index: 3;
-	h2 {
-        width: 384px;
-		font-family: "Mochiy Pop One", sans-serif;
-        font-size: 43px;
-        line-height: 54px;
-        color: var(--text-color-primary);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: absolute;
+	top: 790px;
+	z-index: 3;
 
-        span{
-            font: inherit;
-            color: var(--highlight-secondary);
-        }
+	.background-imgs {
+		width: 100vw;
+
+		position: relative;
+		.item1 {
+			position: absolute;
+			right: 160px;
+			bottom: -180px;
+		}
+		.item2 {
+			position: absolute;
+			left: 0;
+			bottom: -400px;
+		}
+	}
+
+
+	.product-list {
+		// height: 1020px;
+		// overflow: hidden;
+		margin-top: 70px;
+		display: grid;
+		column-gap: 190px;
+		grid-template-columns: 1fr 1fr;
+
+		> :nth-child(2n-1) {
+			margin-top: 140px;
+		}
+		// .img-container {
+		// 	:nth-child(2n) {
+		// 		background-color: red;
+		// 	}
+		// }
+	}
+	.more-products{
+		// width: ;
 	}
 }

@@ -7,11 +7,14 @@
 	justify-content: space-between;
 	padding-left: 20px;
 	padding-right: 120px;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	
 
 	box-shadow: var(--box-shadow-primary);
-        position: sticky;
-        top: 10px;
-
+	// position: absolute;
+	// top: 10px;
+	z-index: 5;
 
 	.logo {
 		cursor: pointer;
@@ -32,7 +35,7 @@
 			&:focus,
 			&:active {
 				color: var(--highlight-secondary);
-				color: #0051A0;
+				color: #0051a0;
 			}
 
 			button {
@@ -49,8 +52,8 @@
 				gap: 5px;
 				background: linear-gradient(90deg, #198dff, #055cb2, #0256a8, #0155a6, #0051a0);
 
-				&:focus{
-					scale: .95;
+				&:focus {
+					scale: 0.95;
 				}
 			}
 		}

@@ -1,0 +1,77 @@
+.product-card-container {
+	width: 300px;
+	height: 360px;
+	// max-height: 360px;
+	// min-height: 300px;
+	border-radius: 20px;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	margin: 20px;
+	padding: 20px;
+	box-shadow: var(--box-shadow-primary);
+
+	.img-container {
+		// background-color: [#ddfdf0, black, red];
+        background-color:#ddfdf0 ;
+		min-height: 200px;
+		border-radius: 20px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		overflow: hidden;
+
+		img {
+			width: 60%;
+			padding: 10px 0;
+			border-radius: 20px;
+			filter: opacity(80%);
+		}
+	}
+	.title {
+		text-align: start;
+		max-width: 65%;
+		max-height: 45px;
+		margin-top: 10px;
+		font-family: sans-serif;
+		font-size: 19px;
+		columns: var(--text-color-primary);
+		line-height: 21px;
+		font-weight: 700;
+		// background-color: red;
+		overflow: hidden;
+	}
+	.bottom-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+		.price {
+			width: 63px;
+			height: 27px;
+			border-radius: 30px;
+			background: rgba($color: #0051a0, $alpha: 0.1);
+			color: var(--highlight-secondary);
+			font-size: 11px;
+			font-weight: 700;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-top: 15px;
+			&::before {
+				content: "₹ ";
+			}
+		}
+		button {
+			padding: 0;
+			width: 46px;
+			min-height: 46px;
+			border-radius: 50%;
+			background: rgba($color: #0051a0, $alpha: 0.1);
+			color: var(--highlight-secondary);
+			border: none;
+			outline: none;
+			// align-items: end;
+		}
+	}
+}

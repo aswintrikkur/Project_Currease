@@ -19,7 +19,7 @@
   height: 0px;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(150, 117, 250, 0.3);
+  background-color: rgba(0, 81, 160, 0.6);
   border-radius: 10px;
 } 
 /* ::-webkit-scrollbar-track {
@@ -30,6 +30,9 @@
 button {
   cursor: pointer;
   outline: none;
+  &:focus{
+    scale: .96;
+  }
 }
 button:focus,
 button:hover {

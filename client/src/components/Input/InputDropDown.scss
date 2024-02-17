@@ -1,11 +1,58 @@
 .input-container {
-    margin-top: 20px;
-	select {
+	margin-top: 20px;
 
-        border: 3px solid #666666;
-        border-radius: 15px;
-        padding: 0 20px;
-		width: 450px;
-		height: 70px;
+	.select {
+        position: relative;
+        display: block;
+        overflow: hidden;
+
+
+        &::after{
+            content: '\25BC';
+            // content: 'v';
+            font-size: 20px;
+            position: absolute;
+            top: 0;
+            right: 20px;
+            bottom: 0;
+            margin: 7px 0;
+            background: linear-gradient( -45deg, rgb(0,81,160),rgb(25,141,255));
+            color: white;
+            width: 67px;
+            height: 56px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+
+        }
+        &::before{
+            width: 80px;
+            height: 80%;
+            content: ' ';
+            position: absolute;
+            right: 6px;
+            top: 6px;
+            border-radius: 15px;
+            background-color: white;
+            pointer-events: none;
+        }
+
+		select {
+			font-family: "Open Sans", sans-serif;
+			font-size: 16px;
+			font-weight: 600;
+			color: #666666;
+			border: 3px solid rgba($color: #0051a0, $alpha: 0.29);
+            outline: none;
+			border-radius: 15px;
+			padding-left: 20px;
+			width: 450px;
+			height: 70px;
+		}
 	}
 }
