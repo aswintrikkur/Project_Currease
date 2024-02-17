@@ -10,7 +10,7 @@ export const Tiltle = ({width, m, children}) => {
 }
 export const SecondaryTiltle = ({width, m, children}) => {
   return (
-    <div className='title-container' style={{width:width , margin:m} }>
+    <div className='secondary-title-container' style={{width:width , margin:m} }>
         <h4> {children}</h4>
     </div>
   )

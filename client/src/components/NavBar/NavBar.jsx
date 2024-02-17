@@ -12,7 +12,7 @@ export const NavBar = () => {
 	return (
 		<div className="navbar-container">
 			<div className="logo" onClick={()=>navigate('/')} >
-				<img src="images/currease logo 1.png" alt="logo" />
+				<img src="/images/currease logo 1.png" alt="logo" />
 			</div>
 			<ul className="nav-list">
 				<li onClick={()=>navigate('/')} >Home</li>

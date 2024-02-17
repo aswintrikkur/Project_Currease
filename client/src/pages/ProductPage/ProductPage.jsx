@@ -1,16 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./ProductPage.scss";
-import { NavBar } from "../../components/NavBar/NavBar";
 import { SecondaryTiltle } from "../../components/title/Tiltle";
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { NavBar } from "../../components/NavBar/NavBar";
+import { PrimaryButton } from "../../components/buttons/Buttons";
 
 export const ProductPage = () => {
 	const [productDetails, setProductDetails] = useState({});
 	const params = useParams();
 	const { productList } = useSelector((state) => state.products);
 
-    const navigate = useNavigate()
+	const navigate = useNavigate();
 	console.log(params, "=========params");
 
 	useEffect(() => {
@@ -25,7 +26,15 @@ export const ProductPage = () => {
 	return (
 		<div className="product-page-container">
 			<NavBar />
-			<button onClick={()=>navigate('/shop')} > Back to products</button>
+			<div className="back-btn">
+				<button onClick={() => navigate("/shop")}>
+					<span>
+						<img src="/icons/regular arrow left.png" alt="$arrow" />
+					</span>
+					Back to Products
+				</button>
+			</div>
+
 			<div className="main-section">
 				<div className="left-section">
 					<div className="img-container">
@@ -34,12 +43,15 @@ export const ProductPage = () => {
 				</div>
 				<div className="right-section">
 					<SecondaryTiltle> New</SecondaryTiltle>
-					<h2>{productDetails?.title}</h2>
-					<h2>
-						<span>Description: </span> {productDetails?.description}
-					</h2>
-					<h2>{productDetails?.category}</h2>
-					<h2>{productDetails?.price}</h2>
+					<h2 className="title">{productDetails?.title}</h2>
+					<div className="description">
+						<h3>Description: </h3>
+						<h4>{productDetails?.description}</h4>
+					</div>
+					<h2 className="price">{productDetails?.price}</h2>
+					<div className="buy-now">
+						<PrimaryButton text="Buy Now" icon="/icons/arrow_white.png" />
+					</div>
 				</div>
 			</div>
 		</div>
