@@ -8,40 +8,45 @@ import { Footer } from "../../components/footer/Footer";
 export const Home = () => {
 	return (
 		<div className="homepage-container">
-			<NavBar />
-			<section>
-				<div className="title1">
-					<h3>UNIQUE CURRY POWDERS</h3>
-				</div>
-				<div className="title2">
-					<h1>
-						Wake Up Your
-						<span>
-							<img src="icons/Frame emoji.png" alt="" />
-						</span>
-						Taste Buds With U
-					</h1>
-				</div>
+			{/* <NavBar /> */}
+			<MainContainer>
+				<section>
+					<div className="title1">
+						<h3>UNIQUE CURRY POWDERS</h3>
+					</div>
+					<div className="title2">
+						<h1>
+							Wake Up Your
+							<span>
+								<img src="icons/Frame emoji.png" alt="" />
+							</span>
+							Taste Buds With U
+						</h1>
+					</div>
 
-				<div className="banner">
-					<div className="gradient-outer">
-						<div className="gradient"></div>
+					<div className="banner">
+						<div className="gradient-outer">
+							<div className="gradient"></div>
+						</div>
+						<div className="product1">
+							<img src="images/Frame product_1.png" alt="#product1" />
+						</div>
+						<div className="product2">
+							<img src="images/frame product_2.png" alt="#product2" />
+						</div>
+						<div className="brands">
+							<img src="images/Frame brands.svg" alt="" />
+						</div>
 					</div>
-					<div className="product1">
-						<img src="images/Frame product_1.png" alt="#product1" />
-					</div>
-					<div className="product2">
-						<img src="images/frame product_2.png" alt="#product2" />
-					</div>
-					<div className="brands">
-						<img src="images/Frame brands.svg" alt="" />
-					</div>
-				</div>
-			</section>
+				</section>
 
-			<section>
-				<Products />
-			</section>
+				<section className="prdouct-container">
+					<Products />
+				</section>
+				<div className="logo-container">
+					<img src="/images/currease logo-big.png" alt="logo" />
+				</div>
+			</MainContainer>
 		</div>
 	);
 };

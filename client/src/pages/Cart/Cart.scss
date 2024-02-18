@@ -1,0 +1,29 @@
+.cart-container {
+	display: flex;
+	flex-direction: column;
+	padding: 0 30px;
+
+	> h2 {
+		margin: 20px 0;
+		font-size: 33px;
+		color: var(--text-color-primary);
+	}
+
+	.main-section {
+		display: flex;
+		gap: 50px;
+		margin-bottom: 100px;
+
+		.cart-list {
+		}
+
+		.summary {
+			min-height: 300px;
+
+            h2{
+                margin-bottom: 180px;
+            }
+        }
+
+	}
+}

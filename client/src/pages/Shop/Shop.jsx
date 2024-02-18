@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Shop.scss";
-import { ProductCard } from "../../components/products/ProductCard/ProductCard";
+import { ProductCard } from "../../components/cards/ProductCard/ProductCard";
 import { useSelector } from "react-redux";
 import { Tiltle } from "../../components/title/Tiltle";
 import { InputDropDown } from "../../components/Input/InputDropDown";

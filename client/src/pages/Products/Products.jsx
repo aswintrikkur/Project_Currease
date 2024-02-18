@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./Products.scss";
 import axios from "axios";
 import { InputDropDown } from "../../components/Input/InputDropDown";
-import { ProductCard } from "../../components/products/ProductCard/ProductCard";
+import { ProductCard } from "../../components/cards/ProductCard/ProductCard";
 import { PrimaryButton } from "../../components/buttons/Buttons";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../redux/features/productsSlice";
@@ -59,8 +59,9 @@ export const Products = () => {
 					<ProductCard data={data} key={data.id} />
 				))}
 			</div>
-			<PrimaryButton text={buttonText} icon={"icons/arrow_white.png"} onClick={showMoreProducts} />
-			<Footer/>
+			<div className="more-products">
+				<PrimaryButton text={buttonText} icon={"icons/arrow_white.png"} onClick={showMoreProducts} />
+			</div>
 		</div>
 	);
 };

@@ -6,6 +6,7 @@ const fetchProductsList = async () => {
 
 const INITIAL_STATE = {
     productList: [],
+    cartList:[]
 }
 
 const productsSlice = createSlice({
@@ -18,13 +19,15 @@ const productsSlice = createSlice({
             state.productList = action.payload;
 
         },
-        cartProducts: () => {
+        addToCart: (state,action) => {
+            state.cartList.push(action.payload)
+            console.log(action.payload);
             console.log('products added to cart')
         }
     },
 
 });
 
-export const { getProducts, cartProducts } = productsSlice.actions;
+export const { getProducts, addToCart } = productsSlice.actions;
 
 export const productReducer = productsSlice.reducer; 

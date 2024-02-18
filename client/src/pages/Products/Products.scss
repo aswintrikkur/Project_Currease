@@ -2,9 +2,6 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	position: absolute;
-	top: 790px;
-	z-index: 3;
 
 	.background-imgs {
 		width: 100vw;
@@ -41,6 +38,6 @@
 		// }
 	}
 	.more-products{
-		// width: ;
+		margin-top: 20px;
 	}
 }

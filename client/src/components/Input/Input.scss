@@ -1,0 +1,15 @@
+.input-container {
+	input {
+		width: 450px;
+		height: 70px;
+		border: rgba(0, 81, 160, 0.29) 4px solid;
+        border-radius: 15px;
+
+        &::placeholder{
+            padding-left: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #666666;
+        }
+	}
+}

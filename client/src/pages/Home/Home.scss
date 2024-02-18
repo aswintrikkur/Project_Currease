@@ -1,11 +1,13 @@
 .homepage-container {
 	width: 100vw;
-	// min-height: 100vh;
+	min-height: 100vh;
 	background-color: white;
+	// background-color: red;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	// position: relative;
+	justify-content: space-between;
+	position: relative;
 
 	.header {
 		// position: fixed;
@@ -107,5 +109,13 @@
 				}
 			}
 		}
+	}
+	.prdouct-container {
+		translate: 0% -13%;
+		z-index: 4;
+	}
+	.logo-container {
+		align-self: center;
+		margin-bottom: 50px;
 	}
 }

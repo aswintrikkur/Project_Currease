@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import "./ProductPage.scss";
 import { SecondaryTiltle } from "../../components/title/Tiltle";
 import { useNavigate, useParams } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { NavBar } from "../../components/NavBar/NavBar";
 import { PrimaryButton } from "../../components/buttons/Buttons";
+import { addToCart } from "../../redux/features/productsSlice";
 
 export const ProductPage = () => {
 	const [productDetails, setProductDetails] = useState({});
 	const params = useParams();
+	const dispatch = useDispatch();
 	const { productList } = useSelector((state) => state.products);
 
 	const navigate = useNavigate();
@@ -21,7 +23,7 @@ export const ProductPage = () => {
 			}
 		});
 	}, []);
-	console.log(productDetails);
+	// console.log(productDetails);
 
 	return (
 		<div className="product-page-container">
@@ -49,8 +51,13 @@ export const ProductPage = () => {
 						<h4>{productDetails?.description}</h4>
 					</div>
 					<h2 className="price">{productDetails?.price}</h2>
+					
 					<div className="buy-now">
-						<PrimaryButton text="Buy Now" icon="/icons/arrow_white.png" />
+						<PrimaryButton
+							onClick={() => dispatch(addToCart(productDetails))}
+							text="Buy Now"
+							icon="/icons/arrow_white.png"
+						/>
 					</div>
 				</div>
 			</div>

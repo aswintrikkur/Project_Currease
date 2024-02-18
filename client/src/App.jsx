@@ -2,6 +2,8 @@ import { Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home/Home";
 import { Shop } from "./pages/Shop/Shop";
 import { ProductPage } from "./pages/ProductPage/ProductPage";
+import { Cart } from "./pages/Cart/Cart";
+import { Contact } from "./pages/Contact/Contact";
 
 function App() {
 	return (
@@ -10,9 +12,10 @@ function App() {
 			<Routes>
 				<Route path="/" element={<Home />} />
 				{/* <Route path="/about" element={<Shop />} /> */}
-				{/* <Route path="/contact" element={<Shop />} /> */}
+				<Route path="/contact" element={<Contact />} />
 				<Route path="/shop" element={<Shop />} />
 				<Route path="/productPage/:id" element={<ProductPage />} />
+				<Route path="/cart" element={<Cart />} />
 			</Routes>
 		</>
 	);

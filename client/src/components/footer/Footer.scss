@@ -1,7 +1,59 @@
-.footer-container{
-    width: 100%;
-    height: 350px;
-    background-color: #DDE4FD;
-    // position: absolute;
-    // bottom: 0;
+.footer-container {
+	width: 85%;
+	height: 350px;
+	background-color: #dde4fd;
+	border-radius: 15px;
+	text-align: center;
+	align-self: center;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	padding: 30px 0;
+
+
+	div {
+		.title1 {
+			color: rgba(24, 25, 51, 0.43);
+			font-size: 12px;
+			font-family: "Mochiy Pop One", sans-serif;
+			margin-top: 20px;
+			margin-bottom: 30px;
+		}
+		.title2 {
+			font-size: 19px;
+			color: var(--text-color-primary);
+		}
+	}
+
+	.btn-container {
+		display: flex;
+		gap: 25px;
+	}
+
+	.bottom-row {
+		width: 90%;
+		height: 80px;
+		padding: 0 50px;
+		border-radius: 20px;
+		font-weight: 400;
+		color: rgba(24, 25, 51, 0.64);
+		background-color: white;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		h4 {
+			font-size: 13px;
+			font-family:  sans-serif;
+		}
+
+		.section-center {
+			display: flex;
+		}
+		.social-media {
+			display: flex;
+		}
+	}
 }
