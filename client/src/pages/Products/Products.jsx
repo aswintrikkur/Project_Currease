@@ -47,20 +47,22 @@ export const Products = () => {
 				<span>Products</span> Within Your Province
 			</Tiltle>
 
-			<div className="background-imgs">
-				<img className="item1" src="images/blur product1.png" alt="" />
-				<img className="item2" src="images/blur product2.png" alt="" />
-			</div>
+			<div className="bg-white">
+				<div className="background-imgs">
+					<img className="item1" src="images/blur product1.png" alt="" />
+					<img className="item2" src="images/blur product2.png" alt="" />
+				</div>
 
-			<InputDropDown />
+				<InputDropDown />
 
-			<div className="product-list">
-				{products?.slice(0, productCount)?.map((data) => (
-					<ProductCard data={data} key={data.id} />
-				))}
-			</div>
-			<div className="more-products">
-				<PrimaryButton text={buttonText} icon={"icons/arrow_white.png"} onClick={showMoreProducts} />
+				<div className="product-list">
+					{products?.slice(0, productCount)?.map((data) => (
+						<ProductCard data={data} key={data.id} />
+					))}
+				</div>
+				<div className="more-products">
+					<PrimaryButton text={buttonText} icon={"icons/arrow_white.png"} onClick={showMoreProducts} />
+				</div>
 			</div>
 		</div>
 	);

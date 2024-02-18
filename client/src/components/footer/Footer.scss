@@ -30,6 +30,11 @@
 	.btn-container {
 		display: flex;
 		gap: 25px;
+
+		h4{
+			cursor: pointer;
+		}
+		
 	}
 
 	.bottom-row {
@@ -54,6 +59,10 @@
 		}
 		.social-media {
 			display: flex;
+			gap: 10px;
+			img{
+				cursor: pointer;
+			}
 		}
 	}
 }

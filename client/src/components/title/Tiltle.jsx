@@ -8,9 +8,9 @@ export const Tiltle = ({width, m, children}) => {
     </div>
   )
 }
-export const SecondaryTiltle = ({width, m, children}) => {
+export const SecondaryTiltle = ({width, m,p, onClick, children}) => {
   return (
-    <div className='secondary-title-container' style={{width:width , margin:m} }>
+    <div className='secondary-title-container' onClick={onClick} style={{width:width ,padding:p, margin:m} }>
         <h4> {children}</h4>
     </div>
   )

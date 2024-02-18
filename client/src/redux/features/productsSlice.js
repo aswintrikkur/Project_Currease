@@ -14,15 +14,15 @@ const productsSlice = createSlice({
     initialState: INITIAL_STATE,
     reducers: {
         getProducts: (state, action) => {
-            console.log('state===', state);
-            console.log('action===', action.payload);
+            // console.log('state===', state);
+            // console.log('action===', action.payload);
             state.productList = action.payload;
 
         },
         addToCart: (state,action) => {
             state.cartList.push(action.payload)
-            console.log(action.payload);
-            console.log('products added to cart')
+            // console.log(action.payload);
+            // console.log('products added to cart')
         }
     },
 

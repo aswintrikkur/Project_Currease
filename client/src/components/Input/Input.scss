@@ -4,6 +4,11 @@
 		height: 70px;
 		border: rgba(0, 81, 160, 0.29) 4px solid;
         border-radius: 15px;
+        outline: none;
+        padding-left: 30px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #666666;
 
         &::placeholder{
             padding-left: 30px;

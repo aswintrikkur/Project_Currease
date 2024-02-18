@@ -4,6 +4,7 @@ import { NavBar } from "../../components/NavBar/NavBar";
 import { Products } from "../Products/Products";
 import { MainContainer } from "../../components/container/Container";
 import { Footer } from "../../components/footer/Footer";
+import { SecondaryTiltle, Tiltle } from "../../components/title/Tiltle";
 
 export const Home = () => {
 	return (
@@ -43,6 +44,17 @@ export const Home = () => {
 				<section className="prdouct-container">
 					<Products />
 				</section>
+				<div className="fav-recipe-section">
+					<Tiltle>
+						<span>Cook</span> With Favourite Recipe.
+					</Tiltle>
+					<div style={{display:"flex"}}>
+						<h4>Yummy Duck Roast</h4>
+
+						<SecondaryTiltle p="0 5px" m="0 15px" >Next recipe</SecondaryTiltle>
+					</div>
+					<img src="/images/fav recipe.svg" alt="" />
+				</div>
 				<div className="logo-container">
 					<img src="/images/currease logo-big.png" alt="logo" />
 				</div>

@@ -1,8 +1,11 @@
 import React from "react";
 import "./Footer.scss";
 import { SecondaryTiltle } from "../title/Tiltle";
+import { useNavigate } from "react-router-dom";
 
 export const Footer = () => {
+	const navigate = useNavigate();
+
 	return (
 		<div className="footer-container">
 			<div>
@@ -12,10 +15,10 @@ export const Footer = () => {
 			</div>
 
 			<div className="btn-container">
-				<SecondaryTiltle>Home</SecondaryTiltle>
-				<SecondaryTiltle>About Us</SecondaryTiltle>
-				<SecondaryTiltle>Contact Us</SecondaryTiltle>
-				<SecondaryTiltle>Shop</SecondaryTiltle>
+				<SecondaryTiltle onClick={() => navigate("/")}>Home</SecondaryTiltle>
+				<SecondaryTiltle onClick={() => navigate("/about")}>About Us</SecondaryTiltle>
+				<SecondaryTiltle onClick={() => navigate("/contact")}>Contact Us</SecondaryTiltle>
+				<SecondaryTiltle onClick={() => navigate("/shop")}>Shop</SecondaryTiltle>
 			</div>
 
 			<div className="bottom-row">

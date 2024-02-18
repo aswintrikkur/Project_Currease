@@ -1,20 +1,29 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Shop.scss";
 import { ProductCard } from "../../components/cards/ProductCard/ProductCard";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../../redux/features/productsSlice";
 import { Tiltle } from "../../components/title/Tiltle";
 import { InputDropDown } from "../../components/Input/InputDropDown";
 import { MainContainer } from "../../components/container/Container";
 import { NavBar } from "../../components/NavBar/NavBar";
 import { PrimaryButton } from "../../components/buttons/Buttons";
 import { Footer } from "../../components/footer/Footer";
+import axios from "axios";
 
 export const Shop = () => {
 	const [productCount, setProductCount] = useState(9);
 	const [buttonText, setButtonText] = useState("More Products");
+	const dispatch = useDispatch();
 
 	const { productList } = useSelector((state) => state.products);
-	console.log(productList);
+
+	useEffect(() => {
+		if (productList.length == 0) {
+			fetchProducts();
+		}
+	}, []);
+
 
 	const showMoreProducts = () => {
 		if (productCount === 9) {
@@ -25,6 +34,16 @@ export const Shop = () => {
 			setButtonText("More Products");
 		}
 	};
+
+	const fetchProducts = async () => {
+		try {
+			const response = await axios("https://fakestoreapi.com/products");
+			dispatch(getProducts(response.data));
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
 
 	return (
 		<div className="shop-container">
@@ -57,7 +76,7 @@ export const Shop = () => {
 				</Tiltle>
 				<div className="like-product-list">
 					{productList?.slice(0, 4)?.map((data, index) => (
-						<ProductCard data={data} key={data.id}  />
+						<ProductCard data={data} key={data.id} />
 					))}
 				</div>
 			</div>
@@ -65,7 +84,7 @@ export const Shop = () => {
 			<div className="logo-big">
 				<img src="images/currease logo-big.png" alt="" />
 			</div>
-            <Footer/>
+			<Footer />
 		</div>
 	);
 };
