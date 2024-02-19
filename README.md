@@ -36,7 +36,7 @@ Welcome to Currease, your one-stop online platform to explore and purchase a del
 
 2. Navigate to project directory    
     
-    cd currease-ecommerce
+    cd Project_Currease
 
 3. Install dependencies:
 

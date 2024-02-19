@@ -1,137 +1,55 @@
-import React from 'react'
+import React, { useState } from "react";
+import "./Login.scss";
+import { Tiltle } from "../../components/title/Tiltle";
+import { Input } from "../../components/Input/Input";
+import { PrimaryButton } from "../../components/buttons/Buttons";
+import { MainContainer } from "../../components/container/Container";
+import { useInput } from "../../hooks/useInput";
+import { useDispatch } from "react-redux";
+import { updateAuthStatus } from "../../redux/features/authSlice";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
-  return (
-    <div className='login-container'>
+	const [userData, setUserData] = useState({ username: "", password: "" });
+	const { handleChangeInput } = useInput();
+	const dispatch = useDispatch();
+	const navigate = useNavigate()
 
-
-
-    </div>
-  )
-}
-
-
-// =============================================================
-
-import React, { useContext, useState } from "react";
-import "./Form.scss";
-import { useInputHandleLocal } from "../../hooks/useInputHandle";
-import { InputSecondary } from "../input/Input";
-import axios from "axios";
-import { API } from "../../api";
-import toast, { Toaster } from "react-hot-toast";
-import { AuthContext } from "../../contextAPI/AuthContext";
-
-export const Form = () => {
-	const [existingUser, setExistingUser] = useState(true);
-
-	//handling user status
-	const handleExistingUser = (status) => {
-		setExistingUser(status);
-	};
-
-	return (
-		<div style={{ width: "100%" }}>
-			{existingUser ? (
-				<LoginForm handleExistingUser={handleExistingUser} />
-			) : (
-				<SignupForm handleExistingUser={handleExistingUser} />
-			)}
-		</div>
-	);
-};
-
-//=========== Login Form =================
-export const LoginForm = ({ handleExistingUser }) => {
-	const [temp, setTemp] = useState({ email: "", password: "" });
-
-	const { handleChangeLocal } = useInputHandleLocal();
-	const { fetchData } = useContext(AuthContext);
-
-	const userLogin = async () => {
-		try {
-			const response = await axios(`${API}/api/user/login`, {
-				method: "POST",
-				data: temp,
-			});
-			toast.success("success");
-			fetchData(response.data);
-		} catch (error) {
-			toast.error(error.response.data.message || "something went wrong");
+	const handleUserLogin = () => {
+		if (userData.username === "aswinkumar" && userData.password === "konceptlabs") {
+			localStorage.setItem("username", userData.username);
+			dispatch(updateAuthStatus(true));
+			navigate('/cart');
+			// return;
 		}
+		// dispatch(updateAuthStatus(false));
 	};
 
+	console.log(userData);
+
 	return (
-		<div className="form-container">
-			<div className="form">
-				<Toaster />
-
-				<h4>LOG IN</h4>
-
-				<InputSecondary
-					placeholder="Email"
+		<MainContainer>
+			<div className="login-container">
+				<Tiltle> Log In </Tiltle>
+				<br />
+				<Input
+					placeholder="Username"
 					type="text"
-					name="email"
-					onChange={(event) => {
-						handleChangeLocal(event, setTemp);
-					}}
+					name="username"
+					onChange={(event) => handleChangeInput(event, setUserData)}
 				/>
-
-				<InputSecondary
+				<Input
 					placeholder="Password"
 					type="password"
 					name="password"
-					onChange={(event) => {
-						handleChangeLocal(event, setTemp);
-					}}
+					onChange={(event) => handleChangeInput(event, setUserData)}
 				/>
-
-				<p>
-					new user?{" "}
-					<span
-						onClick={() => {
-							handleExistingUser(false);
-						}}
-					>
-						Register
-					</span>
-				</p>
-				<button className="submit" onClick={userLogin}>
-					SUBMIT
-				</button>
+				<PrimaryButton text="Submit" padding="20px 100px" onClick={handleUserLogin} />
 			</div>
-			<div className="sample-credentials">
-				<h5>Email: <span>test</span></h5>
-				<h5>Password: <span>test</span></h5>
+			<div className="sample-user">
+				<h4>username: <span>aswinkumar</span></h4>
+				<h4>password: <span> konceptlabs</span></h4>
 			</div>
-		</div>
-	);
-};
-
-//========= Signup Form ==========
-export const SignupForm = ({ handleExistingUser }) => {
-	return (
-		<div className="form-container">
-			<div className="form">
-				<h4>SIGN UP</h4>
-
-				<InputSecondary placeholder="Name" type="text" name="name" />
-				<InputSecondary placeholder="Email" type="email" name="email" />
-				<InputSecondary placeholder="Mobile" type="number" name="number" />
-				<InputSecondary placeholder="Password" type="password" name="password" />
-
-				<p>
-					existing user?
-					<span
-						onClick={() => {
-							handleExistingUser(true);
-						}}
-					>
-						Log In
-					</span>
-				</p>
-				<button className="submit">SUBMIT</button>
-			</div>
-		</div>
+		</MainContainer>
 	);
 };
